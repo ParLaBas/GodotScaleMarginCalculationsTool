@@ -16,7 +16,7 @@ Then, go to Project -> Project Settings -> Plugins and enable the plugin.
 
 * The position of the center of the sprite takes into account the starting/reference position, the different margins required for x and y as well as the direction (From left to Right/From right to left, and From Top to Bottom/From Bottom to Top)
 
-# How to use ? GUI
+# How to use ? 1. GUI
 
 Part A: The right scale
 
@@ -38,7 +38,15 @@ e.g. Do you want to have margins going from bottom to top and a size of 128 pixe
 3) Select whether you want to use the results from Part A (Scale calculator) or not (in which case, select manual scaled size and enter the item size).
 4) Enter the results of the position offset into the Inspector tab of the texture -> Transform -> Position
 
-# How to use ? Function calls
+Screenshot 1/2: The GUI of the plugin
+
+![alt text](/screenshots/screenshot_1.png)
+
+Screenshot 2/2: Applying the results from the plugin
+
+![alt text](/screenshots/Screenshot_2.png)
+
+# How to use ? 2. Function calls
 
 | Function                                                                               | Returns   | Use When                                                |
 | -------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------- |
@@ -49,11 +57,11 @@ e.g. Do you want to have margins going from bottom to top and a size of 128 pixe
 
 ## Example — Scale + Position the car
 
-**Scenario:** A 891×283 car needs to:
+**Scenario:** A 891×283 car texture needs to:
 
-1.  Fit inside a 64×64 slot
+1.  Fit inside 64×64 (meaning that its height and width cannot exceed 64 px. 64 px is therefore the maximum).
     
-2.  Be positioned 128px from the left of the screen, and 64px from the top of the screen
+2.  Be positioned 128px from the left of the screen, and 64px from the top of the screen (here, the reference point is therefore the top left of the screen. It corresponds to the origin: (0,0)).
 
 
 ````
@@ -145,7 +153,7 @@ func _ready() -> void:
 		new_position
 	)
 
-# Here, the car will move to the new position
+# Here, the car will move to the new position thanks to the lerp function
 func _physics_process(
 	delta: float
 ) -> void:
