@@ -8,13 +8,17 @@ Download the scale_margin_calculations_tool folder and put it inside of your God
 Then, go to Project -> Project Settings -> Plugins and enable the plugin.
 
 # What does it do ?
+1) Scale tool:
+* "How much to scale by": Calculates the target scale based on original dimensions and the target minimum (or maximum) size in pixels for either width or height
+* "What are the new dimensions of the sprite once scaled": Calculates the dimensions based on a given scale
+2) Margin tool:
+* "Where to put the item based on margins": Calculates where the (center of) the sprite should be, based on the margins/distance to a defined reference position and direction
 
-* Calculates the target scale based on original dimensions and the target of the minimum/maximum size in pixels of either width or height
-* Calculates the position of the center of the sprite based 
+ I put those two tools together because I personnally use both at the same time for my own game.
  
 # Features
 
-* The position of the center of the sprite takes into account the starting/reference position, the different margins required for x and y as well as the direction (From left to Right/From right to left, and From Top to Bottom/From Bottom to Top)
+* The position of the center of the sprite takes into account the reference position, the different margins required for x and y as well as the direction (From left to Right/From right to left, and From Top to Bottom/From Bottom to Top)
 
 # How to use ? 1. GUI
 
