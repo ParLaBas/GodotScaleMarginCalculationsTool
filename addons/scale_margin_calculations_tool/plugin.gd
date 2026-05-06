@@ -1,38 +1,38 @@
 @tool
 extends EditorPlugin
 
-var dock: Control
+var dock_for_scale_margin_calculations: Control
 
 func _enter_tree(
 ) -> void:
 	# Load the UI script and instantiate it
-	dock = (
+	dock_for_scale_margin_calculations = (
 		preload(
 			"uid://b58qukrjppssu"
 		).new(
 			)
 	)
 	
-	dock.name = (
+	dock_for_scale_margin_calculations.name = (
 		"Scale/Margin"
 	)
 	
 	# Add it to the right dock in the editor
 	add_control_to_dock(
 		EditorPlugin.DOCK_SLOT_RIGHT_UL, 
-		dock
+		dock_for_scale_margin_calculations,
 	)
 
 func _exit_tree(
 ) -> void:
 	
 	if (
-		dock
+		dock_for_scale_margin_calculations
 	):
 		
 		remove_control_from_docks(
-			dock
+			dock_for_scale_margin_calculations
 		)
 		
-		dock.free(
+		dock_for_scale_margin_calculations.free(
 			)
